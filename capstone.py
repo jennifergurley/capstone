@@ -121,7 +121,7 @@ inputdata['performance_A'] = [1 if x == 'A' else 0 for x in inputdata.performanc
 inputdata['performance_B'] = [1 if x == 'B' else 0 for x in inputdata.performance]
 inputdata['performance_C'] = [1 if x == 'C' else 0 for x in inputdata.performance]
 
-inputdata.drop(['retentionrisk', 'hiresource', 'performance'], inplace=True)
+#inputdata.drop(['retentionrisk', 'hiresource', 'performance'], inplace=True)
 
 inputdata
 
