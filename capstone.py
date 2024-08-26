@@ -44,19 +44,19 @@ with st.expander('Add Tenure Categories'):
      data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
 with st.expander('Data Visualization'):
-     st.scatter_chart(data=data, x="gradrn", y="tenurecategory")
-     st.scatter_chart(data=data, x="active", y="tenurecategory")
-     st.scatter_chart(data=data, x="degree", y="tenurecategory")
-     st.scatter_chart(data=data, x="volcerts", y="tenurecategory")
-     st.scatter_chart(data=data, x="rnyears", y="tenurecategory")
-     st.scatter_chart(data=data, x="lasthire", y="tenurecategory")
-     st.scatter_chart(data=data, x="avghours", y="tenurecategory")
-     st.scatter_chart(data=data, x="avgoncall", y="tenurecategory")
-     st.scatter_chart(data=data, x="lateorcallin", y="tenurecategory")
-     st.scatter_chart(data=data, x="avgshiftwork", y="tenurecategory")
-     st.scatter_chart(data=data, x="retentionrisk", y="tenurecategory")
-     st.scatter_chart(data=data, x="hiresource", y="tenurecategory")
-     st.scatter_chart(data=data, x="performance", y="tenurecategory")
+     st.scatter_chart(data=data, x="gradrn", y="tenure")
+     st.scatter_chart(data=data, x="active", y="tenure")
+     st.scatter_chart(data=data, x="degree", y="tenure")
+     st.scatter_chart(data=data, x="volcerts", y="tenure")
+     st.scatter_chart(data=data, x="rnyears", y="tenure")
+     st.scatter_chart(data=data, x="lasthire", y="tenure")
+     st.scatter_chart(data=data, x="avghours", y="tenure")
+     st.scatter_chart(data=data, x="avgoncall", y="tenure")
+     st.scatter_chart(data=data, x="lateorcallin", y="tenure")
+     st.scatter_chart(data=data, x="avgshiftwork", y="tenure")
+     st.scatter_chart(data=data, x="retentionrisk", y="tenure")
+     st.scatter_chart(data=data, x="hiresource", y="tenure")
+     st.scatter_chart(data=data, x="performance", y="tenure")
 
 # split into training and testing
 X = pd.DataFrame(data[['gradrn', 'degree', 'volcerts', 'rnyears', 'lasthire', 'avghours', 'avgoncall', 'lateorcallin', 'avgshiftwork', 'retentionrisk', 'hiresource', 'performance']])
