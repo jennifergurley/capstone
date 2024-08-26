@@ -84,17 +84,17 @@ with st.expander('Training and Test Sets'):
 # user inputs
 with st.sidebar:
      st.header('User Input')
-     gradrn = st.selectbox ('Attended Grad RN Program?:', ('Yes', 'No'))
+     gradrn = st.selectbox ('Attended Grad RN Program?:', ('No', 'Yes'))
      degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
      volcerts = st.slider ('Number of non-Required Certifications:', 0, 4, 0)
      rnyears = st.slider ('How long has employee had RN license?', 0, 45, 10)
-     lasthire = st.slider ('What year was employee last hired?', 1980, 2024, 2015)
+     lasthire = st.slider ('What year was employee last hired?', 1980, 2024, 2020)
      avghours = st.slider ('What are the employees average weekly hours worked?', 8, 42, 36)
      lateorcallin = st.selectbox ('How many attendance points does the employee have?', ('0', '1', '2', '3'))
      avgshiftwork = st.slider ('How many average shift hours does the employee work?', 0, 45, 0)
-     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('A', 'B', 'C'))
-     hiresource = st.selectbox ('What is the employees hire source?', ('Newspaper', 'Job Board', 'Website', 'Referral'))
-     performance = st.selectbox ('What is the employees latest performance score?', ('Below Average', 'Average', 'Above Average'))
+     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('B', 'A', 'C'))
+     hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
+     performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
      
      
 
