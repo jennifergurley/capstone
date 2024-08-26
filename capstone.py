@@ -44,7 +44,7 @@ with st.expander('Add Tenure Categories'):
      data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
 with st.expander('Data Visualization'):
-     st.bar_chart(data=data, x="tenure")
+     st.bar_chart(data=data, x="gradrn" ,y="tenure")
 
 # eda plots
 plt.hist(data.tenure)
