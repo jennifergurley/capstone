@@ -20,7 +20,11 @@ st.info('This application will allow you to predict whether an RN will be a high
 # load dataset
 url = 'https://raw.githubusercontent.com/jennifergurley/capstone/main/rndatafinal.csv'
 data = pd.read_csv(url)
-data[0:5]
+
+#display data
+with st.expander('View Dataset'):
+     st.write('RN Data Final')
+     data
 
 # stats
 df = pd.DataFrame(data)
