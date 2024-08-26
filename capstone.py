@@ -111,7 +111,7 @@ inputdata = {'gradrn': gradrn,
              'avgshiftwork': avgshiftwork,
              'retentionrisk': retentionrisk,
              'hiresource': hiresource,
-             'performance': performance'}
+             'performance': performance}
              
 inputdata['retentionrisk_A'] = [1 if x = 'A' else 0 for x in inputdata.retentionrisk]
 inputdata['retentionrisk_B'] = [1 if x = 'B' else 0 for x in inputdata.retentionrisk]
