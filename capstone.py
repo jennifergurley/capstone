@@ -154,10 +154,3 @@ print(confusion_matrix(y_test,pred))
 print(classification_report(y_test,pred))
 
 
-
-
-
-
-
-
-
