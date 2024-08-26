@@ -1,4 +1,3 @@
-
 # import libraries
 
 import streamlit as st
@@ -12,6 +11,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report,confusion_matrix
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
+
+# titles and info
+st.title('RN Tenure Prediction Application')
+
+st.info('This application will allow you to predict whether an RN will be a high (10+ years), medium (6+ years), or low (< 6 years) tenure employee.')
 
 # load dataset
 url = 'https://raw.githubusercontent.com/jennifergurley/capstone/main/rndatafinal.csv'
