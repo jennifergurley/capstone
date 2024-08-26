@@ -96,9 +96,6 @@ with st.sidebar:
      hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
      performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
      
-     data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
-retentionrisk_A = [1 if retentionrisk = A else 0]
-
 # create input feature dataset
 inputdata = {'gradrn': gradrn,
              'degree': degree,
