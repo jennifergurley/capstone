@@ -43,20 +43,21 @@ with st.expander('Review Data Statistics'):
 with st.expander('Add Tenure Categories'):
      data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
+# STILL NEED WORK!!!
 with st.expander('Data Visualization'):
      st.bar_chart(data=data, x="gradrn", y="tenurecategory")
-     st.scatter_chart(data=data, x="active", y="tenure")
-     st.scatter_chart(data=data, x="degree", y="tenure")
-     st.scatter_chart(data=data, x="volcerts", y="tenure")
-     st.scatter_chart(data=data, x="rnyears", y="tenure")
-     st.scatter_chart(data=data, x="lasthire", y="tenure")
-     st.scatter_chart(data=data, x="avghours", y="tenure")
-     st.scatter_chart(data=data, x="avgoncall", y="tenure")
-     st.scatter_chart(data=data, x="lateorcallin", y="tenure")
-     st.scatter_chart(data=data, x="avgshiftwork", y="tenure")
-     st.scatter_chart(data=data, x="retentionrisk", y="tenure")
-     st.scatter_chart(data=data, x="hiresource", y="tenure")
-     st.scatter_chart(data=data, x="performance", y="tenure")
+     st.bar_chart(data=data, x="active", y="tenure")
+     st.bar_chart(data=data, x="degree", y="tenure")
+     st.bar_chart(data=data, x="volcerts", y="tenure")
+     st.bar_chart(data=data, x="rnyears", y="tenure")
+     st.bar_chart(data=data, x="lasthire", y="tenure")
+     st.bar_chart(data=data, x="avghours", y="tenure")
+     st.bar_chart(data=data, x="avgoncall", y="tenure")
+     st.bar_chart(data=data, x="lateorcallin", y="tenure")
+     st.bar_chart(data=data, x="avgshiftwork", y="tenure")
+     st.bar_chart(data=data, x="retentionrisk", y="tenure")
+     st.bar_chart(data=data, x="hiresource", y="tenure")
+     st.bar_chart(data=data, x="performance", y="tenure")
 
 # split into training and testing
 X = pd.DataFrame(data[['gradrn', 'degree', 'volcerts', 'rnyears', 'lasthire', 'avghours', 'avgoncall', 'lateorcallin', 'avgshiftwork', 'retentionrisk', 'hiresource', 'performance']])
@@ -68,15 +69,16 @@ X, y, test_size=0.20)
 X_train_hot = pd.get_dummies(X_train)
 X_test_hot = pd.get_dummies(X_test)
 
-X_train_hot
-
-y_train
-
-print(y_train.shape)
-
-X_test_hot
-
-y_test
+# display training and test sets
+with st.expander('Training and Test Sets'):
+     st.write('X_train')
+     X_train_hot
+     st.write('y_train')
+     y_train
+     st.write('X_test')
+     X_test_hot
+     st.write('y_test')
+     y_test
 
 knn = KNeighborsClassifier(n_neighbors=10, metric='minkowski')
 
