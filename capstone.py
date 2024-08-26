@@ -26,20 +26,25 @@ with st.expander('View Dataset'):
      st.write('RN Data Final')
      data
 
-# stats
-df = pd.DataFrame(data)
-print(df.describe())
+# calculate and view statistics
+with st.expander('Review Data Statistics'):
+     st.write('Basic Statistics')
+     df = pd.DataFrame(data)
+     print(df.describe())
+     st.write('File Info')
+     data.info()
+     st.write('Check for Null Values')
+     data.isnull().sum()
+     st.write('Calculate Median Tenure')
+     statistics.median(data.tenure)
 
-data.info()
+# add field to show user defined tenure categories
 
-data.isnull().sum()
+with st.expander('Add Tenure Categories'):
+     data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
-# find median tenure / this will be used to determine target tenure for test
-statistics.median(data.tenure)
-
-# add field to show if above or below median tenure
-data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
-data[0:5]
+with st.expander('Data Visualization'):
+     st.bar_chart(data=data, columns=["tenure","gradrn"])
 
 # eda plots
 plt.hist(data.tenure)
