@@ -44,77 +44,19 @@ with st.expander('Add Tenure Categories'):
      data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
 with st.expander('Data Visualization'):
-     st.bar_chart(data=data, x="gradrn" ,y="tenure")
-
-# eda plots
-plt.hist(data.tenure)
-plt.xticks((0,5))
-plt.title('Tenure')
-plt.show()
-
-plt.hist(data.tenurecategory)
-plt.title('Tenure Category')
-plt.show()
-
-plt.hist(data.active)
-plt.xticks((0,1))
-plt.title('Currently Active')
-plt.show()
-
-plt.hist(data.gradrn)
-plt.xticks((0,1))
-plt.title('Attended Grad RN Program')
-plt.show()
-
-plt.hist(data.degree)
-plt.xticks((0,3))
-plt.title('Degree Level')
-plt.show()
-
-plt.hist(data.volcerts)
-plt.xticks((0,3))
-plt.title('Voluntary Certificates')
-plt.show()
-
-plt.hist(data.rnyears)
-plt.xticks((0,5))
-plt.title('Years as RN')
-plt.show()
-
-plt.hist(data.lasthire)
-plt.title('Last Hire Year')
-plt.show()
-
-plt.hist(data.avghours)
-plt.xticks((0,5))
-plt.title('Average Hours Worked')
-plt.show()
-
-plt.hist(data.avgoncall)
-plt.xticks((0,1))
-plt.title('Average On Call Hours')
-plt.show()
-
-plt.hist(data.lateorcallin)
-plt.xticks((0,1))
-plt.title('Late or Call-in Occurences')
-plt.show()
-
-plt.hist(data.avgshiftwork)
-plt.title('Average Shift Work Hours')
-plt.show()
-
-plt.hist(data.retentionrisk)
-plt.title('Retention Risk')
-plt.show()
-
-plt.hist(data.hiresource)
-plt.title('Hire Source')
-plt.show()
-
-plt.hist(data.performance)
-plt.title('Performance')
-plt.show()
+     st.scatter_chart(data=data, x="gradrn", y="tenurecategory")
+     st.scatter_chart(data=data, x="active", y="tenurecategory")
+     st.scatter_chart(data=data, x="degree", y="tenurecategory")
+     st.scatter_chart(data=data, x="volcerts", y="tenurecategory")
+     st.scatter_chart(data=data, x="rnyears", y="tenurecategory")
+     st.scatter_chart(data=data, x="lasthire", y="tenurecategory")
+     st.scatter_chart(data=data, x="avghours", y="tenurecategory")
+     st.scatter_chart(data=data, x="avgoncall", y="tenurecategory")
+     st.scatter_chart(data=data, x="lateorcallin", y="tenurecategory")
+     st.scatter_chart(data=data, x="avgshiftwork", y="tenurecategory")
+     st.scatter_chart(data=data, x="retentionrisk", y="tenurecategory")
+     st.scatter_chart(data=data, x="hiresource", y="tenurecategory")
+     st.scatter_chart(data=data, x="performance", y="tenurecategory")
 
 # split into training and testing
 X = pd.DataFrame(data[['gradrn', 'degree', 'volcerts', 'rnyears', 'lasthire', 'avghours', 'avgoncall', 'lateorcallin', 'avgshiftwork', 'retentionrisk', 'hiresource', 'performance']])
