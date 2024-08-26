@@ -96,8 +96,37 @@ with st.sidebar:
      hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
      performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
      
-     
+     data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
+retentionrisk_A = [1 if retentionrisk = A else 0]
 
+# create input feature dataset
+inputdata = {'gradrn': gradrn,
+             'degree': degree,
+             'volcerts': volcerts,
+             'rnyears': rnyears,
+             'lasthire': lasthire,
+             'avghours': avghours,
+             'avgoncall': 0,
+             'lateorcallin': lateorcallin,
+             'avgshiftwork': avgshiftwork,
+             'retentionrisk': retentionrisk,
+             'hiresource': hiresource,
+             'performance': performance'}
+             
+inputdata['retentionrisk_A'] = [1 if x = 'A' else 0 for x in inputdata.retentionrisk]
+inputdata['retentionrisk_B'] = [1 if x = 'B' else 0 for x in inputdata.retentionrisk]
+inputdata['retentionrisk_C'] = [1 if x = 'C' else 0 for x in inputdata.retentionrisk]
+inputdata['hiresource_companywebsite'] = [1 if x = 'Website' else 0 for x in inputdata.hiresource]
+inputdata['hiresource_jobboard'] = [1 if x = 'Job Board' else 0 for x in inputdata.hiresource]
+inputdata['hiresource_newspaper'] = [1 if x = 'Newspaper' else 0 for x in inputdata.hiresource]
+inputdata['hiresource_referral'] = [1 if x = 'Referral' else 0 for x in inputdata.hiresource]
+inputdata['performance_A'] = [1 if x = 'A' else 0 for x in inputdata.performance]
+inputdata['performance_B'] = [1 if x = 'B' else 0 for x in inputdata.performance]
+inputdata['performance_C'] = [1 if x = 'C' else 0 for x in inputdata.performance]
+
+inputdata.drop(['retentionrisk', 'hiresource', 'performance'], inplace=True]
+
+inputdata
 
 # build and fit model
 
