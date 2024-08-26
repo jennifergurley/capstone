@@ -110,7 +110,7 @@ inputdata = {'gradrn': gradrn,
              'hiresource': hiresource,
              'performance': performance}
              
-inputdata['retentionrisk_A'] = [1 if x = 'A' else 0 for x in inputdata.retentionrisk]
+inputdata['retentionrisk_A'] = [1 if x == 'A' else 0 for x in inputdata.retentionrisk]
 inputdata['retentionrisk_B'] = [1 if x = 'B' else 0 for x in inputdata.retentionrisk]
 inputdata['retentionrisk_C'] = [1 if x = 'C' else 0 for x in inputdata.retentionrisk]
 inputdata['hiresource_companywebsite'] = [1 if x = 'Website' else 0 for x in inputdata.hiresource]
