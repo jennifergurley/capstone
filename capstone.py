@@ -14,7 +14,8 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 
 # load dataset
-data = pd.read_csv('C:/capstone/rndatafinal.csv')
+url = 'https://raw.githubusercontent.com/jennifergurley/capstone/main/rndatafinal.csv'
+data = pd.read_csv(url)
 data[0:5]
 
 # stats
