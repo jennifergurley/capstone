@@ -123,8 +123,12 @@ inputdata = {'gradrn': gradrn,
 
 #inputdata.drop(['retentionrisk', 'hiresource', 'performance'], inplace=True)
 
-inputdata
+inputdf = pd.DataFrame(inputdata, index[0])
 
+#display user input data
+with st.expander('User Input Data'):
+     inputdf
+     
 # build and fit model
 
 knn = KNeighborsClassifier(n_neighbors=10, metric='minkowski')
