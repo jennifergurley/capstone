@@ -44,7 +44,7 @@ with st.expander('Add Tenure Categories'):
      data['tenurecategory'] = ['high tenure' if x > 10 else 'medium tenure' if x > 6 else 'low tenure' for x in data.tenure]
 
 with st.expander('Data Visualization'):
-     st.scatter_chart(data=data, x="gradrn", y="tenure")
+     st.bar_chart(data=data, x="gradrn", y="tenure")
      st.scatter_chart(data=data, x="active", y="tenure")
      st.scatter_chart(data=data, x="degree", y="tenure")
      st.scatter_chart(data=data, x="volcerts", y="tenure")
