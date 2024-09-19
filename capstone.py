@@ -16,7 +16,7 @@ from sklearn.model_selection import cross_val_score
 # create application title and overview
 st.title('RN Tenure Prediction Application')
 
-st.info('This application will allow you to predict whether an RN will be a high (10+ years), medium (6+ years), or low (< 6 years) tenure employee.')
+st.info('This application will allow you to predict whether an RN will be a high (7+ years), medium (3+ years), or low (< 3 years) tenure employee.')
 
 
 # load dataset
@@ -39,17 +39,18 @@ with st.expander('Review Data Statistics'):
      df = pd.DataFrame(data)
      print(df.describe())
      st.write('File Info')
-     data.info()
+     print(data.info())
      st.write('Check for Null Values')
-     data.isnull().sum()
+     print(data.isnull().sum())
      st.write('Calculate Median Tenure')
-     statistics.median(data.tenure)
+     print(statistics.median(data.tenure))
 
 
 # add field to show user defined tenure categories
 with st.expander('Add Tenure Categories'):
      st.write('High tenure is 7+ years; medium tenure is between 3 and 7 years; low tenure is less than 3 years')
      data['tenurecategory'] = ['high tenure' if x > 7 else 'medium tenure' if x > 3 else 'low tenure' for x in data.tenure]
+     data
 
 
 # visualize datapoints versus tenure category
@@ -90,7 +91,8 @@ with st.expander('Training and Test Sets'):
 with st.sidebar:
      
 # user input to set KNN parameters
-     st.header('KNN parameters')
+     st.header('Select KNN parameters')
+     st.write('Select the KNN parameters you would like to use')
      udneighbors = st.slider ('Select KNN neighbors: ', 2, 30, 10)
      udmetric = st.selectbox ('Select KNN metric: ', ('minkowsky', 'euclidean'))
 
@@ -144,7 +146,7 @@ with st.expander('User Input Data'):
 
 # build and fit model
 
-knn = KNeighborsClassifier(n_neighbors=udneighbors, metric=udmetric)
+knn = KNeighborsClassifier(n_neighbors=10, metric='minkowsky')
 
 knn.fit(X_train_hot,y_train.values.ravel())
 
