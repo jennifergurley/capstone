@@ -94,7 +94,7 @@ with st.sidebar:
      st.header('Select KNN parameters')
      st.write('Select the KNN parameters you would like to use')
      udneighbors = st.slider ('Select KNN neighbors: ', 2, 30, 10)
-     udmetric = st.selectbox ('Select KNN metric: ', ('minkowsky', 'euclidean'))
+     udmetric = st.selectbox ('Select KNN metric: ', ('minkowski', 'euclidean'))
 
 # user input to predict high tenure
      st.header('Try it!')
@@ -146,7 +146,7 @@ with st.expander('User Input Data'):
 
 # build and fit model
 
-knn = KNeighborsClassifier(n_neighbors=10, metric='minkowsky')
+knn = KNeighborsClassifier(n_neighbors=udneighbors, metric=udmetric)
 
 knn.fit(X_train_hot,y_train.values.ravel())
 
