@@ -53,24 +53,12 @@ with st.expander('Add Tenure Categories'):
 
 
 # create scatter plots
-with st.expander('Plot Tenure'):
+with st.expander('Data Visualization for Selected Attributes'):
      st.scatter_chart(data=data, x="tenure", y="rnyears")
      st.scatter_chart(data=data, x="tenure", y="avghours")
      st.scatter_chart(data=data, x="tenure", y="gradrn")
      st.scatter_chart(data=data, x="tenure", y="volcerts")
 
-
-
-# visualize datapoints versus tenure category
-with st.expander('Data Visualization for Selected Attributes'):
-     st.bar_chart(data=data, x="gradrn", y="tenurecategory")
-     st.bar_chart(data=data, x="degree", y="tenurecategory")
-     st.bar_chart(data=data, x="volcerts", y="tenurecategory")
-     st.bar_chart(data=data, x="rnyears", y="tenurecategory")
-     st.bar_chart(data=data, x="lasthire", y="tenurecategory")
-     st.bar_chart(data=data, x="avghours", y="tenurecategory")
-     st.bar_chart(data=data, x="hiresource", y="tenurecategory")
-     st.bar_chart(data=data, x="performance", y="tenurecategory")
 
 
 # split into training and testing
@@ -134,6 +122,8 @@ inputdata = {'gradrn': gradrn,
              'hiresource': hiresource,
              'performance': performance}
              
+inputdf = pd.DataFrrame(inputdata, index=[0])
+
 #inputdata['retentionrisk_A'] = [1 if x == 'A' else 0 for x in inputdata.retentionrisk]
 #inputdata['retentionrisk_B'] = [1 if x == 'B' else 0 for x in inputdata.retentionrisk]
 #inputdata['retentionrisk_C'] = [1 if x == 'C' else 0 for x in inputdata.retentionrisk]
@@ -149,7 +139,7 @@ inputdata = {'gradrn': gradrn,
 
 #display user input data
 with st.expander('User Input Data'):
-     inputdata
+     inputdf
      
 
 # build and fit model
