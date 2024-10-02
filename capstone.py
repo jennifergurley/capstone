@@ -36,7 +36,7 @@ with st.expander('View the Registered Nurse Dataset'):
 with st.expander('Review Data Statistics'):
      st.write('Basic Statistics')
      df = pd.DataFrame(data)
-     df.describe()
+     st.write(df.describe())
 #     st.write('File Info')
 #     print(data.info())
 #     st.write('Check for Null Values')
