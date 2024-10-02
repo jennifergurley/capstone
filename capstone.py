@@ -54,7 +54,7 @@ with st.expander('Add Tenure Categories'):
 
 # create scatter plots
 with st.expander('Plot Tenure'):
-     st.scatter_chart(data=data, x="tenure", y="degree", color="blue")
+     st.scatter_chart(data=data, x="tenure", y="degree")
 
 
 # visualize datapoints versus tenure category
