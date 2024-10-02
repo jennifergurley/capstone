@@ -122,7 +122,7 @@ inputdata = {'gradrn': gradrn,
              'hiresource': hiresource,
              'performance': performance}
              
-inputdf = pd.DataFrrame(inputdata, index=[0])
+inputdf = pd.DataFrame(inputdata, index=[0])
 
 #inputdata['retentionrisk_A'] = [1 if x == 'A' else 0 for x in inputdata.retentionrisk]
 #inputdata['retentionrisk_B'] = [1 if x == 'B' else 0 for x in inputdata.retentionrisk]
