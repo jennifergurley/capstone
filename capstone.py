@@ -28,20 +28,20 @@ data = pd.read_csv(url)
 
 # display dataset
 with st.expander('View the Registered Nurse Dataset'):
-     st.write('Registered Nurse Dataset')
+     st.write('** Registered Nurse Dataset **')
      data
 
 
 # calculate and view statistics
 with st.expander('Review Data Statistics'):
-     st.write('Basic Statistics')
+     st.write('** Basic Statistics **')
      df = pd.DataFrame(data)
      st.write(df.describe())
-     st.write('File Info')
+     st.write('** File Info **')
      st.write(data.info())
-     st.write('Check for Null Values')
+     st.write('** Check for Null Values **')
      st.write(data.isnull().sum())
-     st.write('Calculate Median Tenure')
+     st.write('** Median Tenure **')
      st.write(statistics.median(data.tenure))
 
 
@@ -54,9 +54,13 @@ with st.expander('Add Tenure Categories'):
 
 # create scatter plots
 with st.expander('Data Visualization for Selected Attributes'):
+     st.write('** Tenure vs Years as RN **')
      st.scatter_chart(data=data, x="tenure", y="rnyears")
+     st.write('** Tenure vs Average Hours Worked **')
      st.scatter_chart(data=data, x="tenure", y="avghours")
+     st.write('** Tenure vs Grad RN Orientation Attendance **')
      st.scatter_chart(data=data, x="tenure", y="gradrn")
+     st.write('** Tenure vs Voluntary Certifications **')
      st.scatter_chart(data=data, x="tenure", y="volcerts")
 
 
@@ -73,6 +77,8 @@ X_test_hot = pd.get_dummies(X_test)
 
 # display training and test sets
 with st.expander('Training and Test Sets'):
+     st.write('Data has been one-hot encoded')
+     st.write(' ')
      st.write('X_train')
      X_train_hot
      st.write('y_train')
