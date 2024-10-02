@@ -37,12 +37,12 @@ with st.expander('Review Data Statistics'):
      st.write('Basic Statistics')
      df = pd.DataFrame(data)
      print(df.describe())
-     st.write('File Info')
-     print(data.info())
-     st.write('Check for Null Values')
-     print(data.isnull().sum())
-     st.write('Calculate Median Tenure')
-     print(statistics.median(data.tenure))
+#     st.write('File Info')
+#     print(data.info())
+#     st.write('Check for Null Values')
+#     print(data.isnull().sum())
+#     st.write('Calculate Median Tenure')
+#     print(statistics.median(data.tenure))
 
 
 # add field to show user defined tenure categories
