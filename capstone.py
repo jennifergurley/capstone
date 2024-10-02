@@ -14,10 +14,9 @@ from sklearn.model_selection import cross_val_score
 
 
 # create application title and overview
-st.title('RN Tenure Prediction Application')
+st.title('Registered Nurse Tenure Prediction Application')
 
 st.info('This application will allow you to predict whether an RN will be a high (7+ years), medium (3+ years), or low (< 3 years) tenure employee.')
-
 
 # load dataset
 url = 'https://raw.githubusercontent.com/jennifergurley/capstone/main/rndatafinal.csv'
@@ -28,8 +27,8 @@ data = pd.read_csv(url)
 # each expander will have a descriptive title for ease of selection
 
 # display dataset
-with st.expander('View Dataset'):
-     st.write('RN Data Final')
+with st.expander('View the Registered Nurse Dataset'):
+     st.write('Registered Nurse Dataset')
      data
 
 
@@ -51,6 +50,11 @@ with st.expander('Add Tenure Categories'):
      st.write('High tenure is 7+ years; medium tenure is between 3 and 7 years; low tenure is less than 3 years')
      data['tenurecategory'] = ['high tenure' if x > 7 else 'medium tenure' if x > 3 else 'low tenure' for x in data.tenure]
      data
+
+
+# create scatter plots
+with st.expander('Plot Tenure'):
+     st.scatter_chart(data=data, x="tenure", y="degree", color="blue")
 
 
 # visualize datapoints versus tenure category
