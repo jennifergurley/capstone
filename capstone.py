@@ -142,13 +142,20 @@ with st.expander('User Input Data'):
      inputdf
      st.write(' ')
      st.write('Here are some actions you can take to increase retention for this RN:')
+     st.write(' ')
+     st.write('Degree Level')
      if degree == "Associates":
           st.write('This RN has an Associates degree. Consider offering tuition reimbursement.')
+     else:
+          st.write('Great hire! RNs with a Bachelors or Masters degree tend to be more engaged and stay longer.')
+     st.write(' ')
+     st.write('RN Experience')
      if rnyears < 5:
           st.write('This RN has less than 5 years experience. Attending the Grad RN Orientation Program may help increase their tenure.')
-     if rnyears > 15:
+     else if rnyears > 15:
           st.write('This RN has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
-     
+     else:
+          st.write('Encourage your RN to set short and long term career goals.')
 
 # build and fit model
 
