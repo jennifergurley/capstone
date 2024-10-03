@@ -98,35 +98,41 @@ with st.sidebar:
      udneighbors = st.slider ('Select KNN neighbors: ', 2, 30, 10)
      udmetric = st.selectbox ('Select KNN metric: ', ('minkowski', 'euclidean'))
 
-# user input to predict high tenure
-     st.header('Try it!')
-     st.write('Predict high tenure based on user selected parameters')
-     gradrn = st.selectbox ('Attended Grad RN Program?:', ('No', 'Yes'))
+# user input to generate report to optimize retention based on RN attributes
+# 10/2 note: simplified user interface to better align with purpose and removed some attributes
+# instead of predicting tenure, the system will product actions to optimize retention based on inputs
+     st.header('RN Retention Actions')
+     st.write('Hiring an RN? Select information about them to get suggestions for optimizing retention.')
+#     gradrn = st.selectbox ('Attended Grad RN Program?:', ('No', 'Yes'))
      degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
-     volcerts = st.slider ('Number of non-Required Certifications:', 0, 4, 0)
+#     volcerts = st.slider ('Number of non-Required Certifications:', 0, 4, 0)
      rnyears = st.slider ('How long has employee had RN license?', 0, 45, 10)
-     lasthire = st.slider ('What year was employee last hired?', 1980, 2024, 2020)
-     avghours = st.slider ('What are the employees average weekly hours worked?', 8, 42, 36)
-     lateorcallin = st.selectbox ('How many attendance points does the employee have?', ('0', '1', '2', '3'))
-     avgshiftwork = st.slider ('How many average shift hours does the employee work?', 0, 45, 0)
-     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('B', 'A', 'C'))
-     hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
-     performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
+#     lasthire = st.slider ('What year was employee last hired?', 1980, 2024, 2020)
+#     avghours = st.slider ('What are the employees average weekly hours worked?', 8, 42, 36)
+#     lateorcallin = st.selectbox ('How many attendance points does the employee have?', ('0', '1', '2', '3'))
+#     avgshiftwork = st.slider ('How many average shift hours does the employee work?', 0, 45, 0)
+#     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('B', 'A', 'C'))
+#     hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
+#     performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
 
 
 # create input feature dataset
-inputdata = {'gradrn': gradrn,
-             'degree': degree,
-             'volcerts': volcerts,
-             'rnyears': rnyears,
-             'lasthire': lasthire,
-             'avghours': avghours,
-             'avgoncall': 0,
-             'lateorcallin': lateorcallin,
-             'avgshiftwork': avgshiftwork,
-             'retentionrisk': retentionrisk,
-             'hiresource': hiresource,
-             'performance': performance}
+# inputdata = {'degree': degree,
+             'rnyears': rnyears,}
+
+# 10/2 - retain code in case I need to go back to prediction model
+# inputdata = {'gradrn': gradrn,
+#             'degree': degree,
+#             'volcerts': volcerts,
+#             'rnyears': rnyears,
+#             'lasthire': lasthire,
+#             'avghours': avghours,
+#             'avgoncall': 0,
+#             'lateorcallin': lateorcallin,
+#             'avgshiftwork': avgshiftwork,
+#             'retentionrisk': retentionrisk,
+#             'hiresource': hiresource,
+#             'performance': performance}
              
 inputdf = pd.DataFrame(inputdata, index=[0])
 
