@@ -138,20 +138,19 @@ inputdata = {'degree': degree,
 inputdf = pd.DataFrame(inputdata, index=[0])
 
 #display user input data
-with st.expander('User Input Data'):
-     st.write('You entered the following information:')
-     st.write(f'This RN has a {degree} degree and {rnyears} years experience.')
+with st.expander('RN Retention Actions'):
+     st.write(f'{rnname} has a {degree} degree and {rnyears} years experience.')
      inputdf
      st.write(' ')
-     st.write('Here are some actions you can take to increase retention for this RN:')
+     st.write(f'Here are some actions you can take to increase retention for {rnname}:')
      st.write(' ')
      if degree == "Associates":
-          st.write('This RN has an Associates degree. Consider offering tuition reimbursement.')
+          st.write(f'Consider offering tuition reimbursement to encourage {rnname} to earn a BSN.')
      if rnyears < 5:
-          st.write('This RN has less than 5 years experience. Attending the Grad RN Orientation Program may help increase their tenure.')
+          st.write(f'Since {rnname} has less than 5 years experience, attending the Grad RN Orientation Program may be beneficial.')
      if rnyears > 15:
-          st.write('This RN has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
-     st.write('Work with your employee to set short and long term goals. Employees with goals are more engaged.')
+          st.write(f'{rnname} has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
+     st.write(f'Work with {rnname} to set short and long term goals. Employees with goals are more engaged.')
 
 
 # build and fit model
