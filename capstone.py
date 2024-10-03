@@ -138,7 +138,16 @@ inputdf = pd.DataFrame(inputdata, index=[0])
 
 #display user input data
 with st.expander('User Input Data'):
+     st.write('You entered the following information:')
      inputdf
+     st.write(' ')
+     st.write('Here are some actions you can take to increase retention for this RN:')
+     if degree == "Associates":
+          st.write('This RN has an Associates degree. Consider offering tuition reimbursement.')
+     if rnyears < 5:
+          st.write('This RN has less than 5 years experience. Attending the Grad RN Orientation Program may help increase their tenure.')
+     if rnyears > 15:
+          st.write('This RN has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
      
 
 # build and fit model
