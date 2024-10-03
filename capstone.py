@@ -115,6 +115,7 @@ with st.sidebar:
 #     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('B', 'A', 'C'))
 #     hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
 #     performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
+     st.write(f'Expand the RN Retention Actions section in the main window to see suggestions for {rnname}.')
 
 
 # create input feature dataset
@@ -140,7 +141,6 @@ inputdf = pd.DataFrame(inputdata, index=[0])
 #display user input data
 with st.expander('RN Retention Actions'):
      st.write(f'{rnname} has a {degree} degree and {rnyears} years experience.')
-     inputdf
      st.write(' ')
      st.write(f'Here are some actions you can take to increase retention for {rnname}:')
      st.write(' ')
