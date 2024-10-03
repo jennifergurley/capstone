@@ -152,7 +152,7 @@ with st.expander('User Input Data'):
      st.write('RN Experience')
      if rnyears < 5:
           st.write('This RN has less than 5 years experience. Attending the Grad RN Orientation Program may help increase their tenure.')
-     else if rnyears > 15:
+     if rnyears > 15:
           st.write('This RN has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
      else:
           st.write('Encourage your RN to set short and long term career goals.')
