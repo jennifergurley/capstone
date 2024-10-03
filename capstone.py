@@ -118,7 +118,7 @@ with st.sidebar:
 
 # create input feature dataset
 # inputdata = {'degree': degree,
-             'rnyears': rnyears,}
+             'rnyears': rnyears}
 
 # 10/2 - retain code in case I need to go back to prediction model
 # inputdata = {'gradrn': gradrn,
