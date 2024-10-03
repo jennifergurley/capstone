@@ -103,6 +103,7 @@ with st.sidebar:
 # instead of predicting tenure, the system will product actions to optimize retention based on inputs
      st.header('RN Retention Actions')
      st.write('Hiring an RN? Select information about them to get suggestions for optimizing retention.')
+     rnname = st.text_input ('What is this RNs name? ')
 #     gradrn = st.selectbox ('Attended Grad RN Program?:', ('No', 'Yes'))
      degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
 #     volcerts = st.slider ('Number of non-Required Certifications:', 0, 4, 0)
