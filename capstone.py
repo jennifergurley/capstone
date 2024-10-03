@@ -139,6 +139,7 @@ inputdf = pd.DataFrame(inputdata, index=[0])
 #display user input data
 with st.expander('User Input Data'):
      st.write('You entered the following information:')
+     st.write(f'This RN has a {degree} degree and {rnyears} years experience.')
      inputdf
      st.write(' ')
      st.write('Here are some actions you can take to increase retention for this RN:')
