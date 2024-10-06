@@ -103,7 +103,7 @@ with st.sidebar:
 
 with st.sidebar:
      st.header('User Manual')
-     st.link_button('User Guide', 'UserManual.htm')
+     st.html(<b>User Manual</b><br><br>This is my user manual.)
 
 st.header('Build and Fit the KNN Model')
 st.write('From the sidebar, select the KNN parameters you would like to use to build the model, then use the expanders below to view the results. You may reset the parameters to fine-tune the model.')
