@@ -100,7 +100,7 @@ with st.sidebar:
      udneighbors = st.slider ('Select KNN neighbors: ', 2, 30, 10)
      udmetric = st.selectbox ('Select KNN metric: ', ('minkowski', 'euclidean'))
 
-
+# user manual
 with st.sidebar:
      st.header('User Manual')
      with st.expander('Overview'):
