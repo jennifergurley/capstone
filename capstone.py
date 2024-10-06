@@ -138,7 +138,8 @@ st.write('Enter information about a new hire RN below to see actions you can tak
 # user input to generate report to optimize retention based on RN attributes
 # 10/2 note: simplified user interface to better align with purpose and removed some attributes
 # instead of predicting tenure, the system will product actions to optimize retention based on inputs
-     st.header('RN Retention Actions')
+
+st.header('RN Retention Actions')
      st.write('Hiring an RN? Select information about them to get suggestions for optimizing retention.')
      rnname = st.text_input ('What is this RNs name? ')
      degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
