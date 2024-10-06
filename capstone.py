@@ -124,23 +124,27 @@ knn.fit(X_train_hot,y_train.values.ravel())
 
 pred = knn.predict(X_test_hot)
 
-error_rate = []
+with st.expander('Error Rates'):
+     error_rate = []
+     for i in range(1,160):
+          knn = KNeighborsClassifier(n_neighbors=i)
+          knn.fit(X_train_hot,y_train.values.ravel())
+          pred_i = knn.predict(X_test_hot)
+          error_rate.append(np.mean(pred_i != y_test.values.ravel()))
+     error_rate
 
-for i in range(1,160):
-     knn = KNeighborsClassifier(n_neighbors=i)
-     knn.fit(X_train_hot,y_train.values.ravel())
-     pred_i = knn.predict(X_test_hot)
-     error_rate.append(np.mean(pred_i != y_test.values.ravel()))
+with st.expander('Confusion Matrix'):
+     st.write(confusion_matrix(y_test,pred))
+
+with st.expander('Classification Report'):
+     st.write(classification_report(y_test,pred))
 
 
-plt.figure(figsize=(10,6))
-plt.plot(range(1,160),error_rate, color='blue',linestyle='dashed')
+with st.expander('Plot Error Rates'):
+     plt.figure(figsize=(10,6))
+     plt.plot(range(1,160),error_rate, color='blue',linestyle='dashed')
+     
 
-error_rate
-
-print(confusion_matrix(y_test,pred))
-
-print(classification_report(y_test,pred))
 
 
 
