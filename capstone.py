@@ -141,8 +141,9 @@ with st.expander('Classification Report'):
 
 
 with st.expander('Plot Error Rates'):
-     plt.figure(figsize=(10,6))
-     plt.plot(range(1,160),error_rate, color='blue',linestyle='dashed')
+     st.line_chart(error_rate)
+     #plt.figure(figsize=(10,6))
+     #plt.plot(range(1,160),error_rate, color='blue',linestyle='dashed')
      
 
 
