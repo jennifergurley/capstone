@@ -103,7 +103,7 @@ with st.sidebar:
 
 with st.sidebar:
      st.header('User Manual')
-     st.link_button('User Guide', https://github.com/jennifergurley/capstone/blob/df9c1848902c70a18db0fdff79ee933e7cac1723/UserManual.docx)
+     st.link_button('User Guide', 'https://github.com/jennifergurley/capstone/blob/df9c1848902c70a18db0fdff79ee933e7cac1723/UserManual.docx')
 
 st.header('Build and Fit the KNN Model')
 st.write('From the sidebar, select the KNN parameters you would like to use to build the model, then use the expanders below to view the results. You may reset the parameters to fine-tune the model.')
