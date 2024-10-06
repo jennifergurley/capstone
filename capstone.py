@@ -100,6 +100,11 @@ with st.sidebar:
      udneighbors = st.slider ('Select KNN neighbors: ', 2, 30, 10)
      udmetric = st.selectbox ('Select KNN metric: ', ('minkowski', 'euclidean'))
 
+
+with st.sidebar:
+     st.header('User Manual')
+     st.link_button('User Guide', User Manual.docx)
+
 st.header('Build and Fit the KNN Model')
 st.write('From the sidebar, select the KNN parameters you would like to use to build the model, then use the expanders below to view the results. You may reset the parameters to fine-tune the model.')
 
