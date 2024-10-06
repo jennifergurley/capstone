@@ -131,20 +131,15 @@ with st.expander('Plot Error Rates'):
 
 
 
+# user input to generate report to optimize retention based on RN attributes
 
 st.header('RN Retention Actions')
 st.write('Enter information about a new hire RN below to see actions you can take to help retain them longer.')
 
-# user input to generate report to optimize retention based on RN attributes
-# 10/2 note: simplified user interface to better align with purpose and removed some attributes
-# instead of predicting tenure, the system will product actions to optimize retention based on inputs
-
-st.header('RN Retention Actions')
-     st.write('Hiring an RN? Select information about them to get suggestions for optimizing retention.')
-     rnname = st.text_input ('What is this RNs name? ')
-     degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
-     rnyears = st.slider ('How long has employee had RN license?', 0, 45, 10)
-     st.write(f'Expand the RN Retention Actions section in the main window to see suggestions for {rnname}.')
+rnname = st.text_input ('What is this RNs name? ')
+degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
+rnyears = st.slider ('How long has employee had RN license?', 0, 45, 10)
+st.write(f'Expand the RN Retention Actions section below to see suggestions for {rnname}.')
 
 
 # create input feature dataset
@@ -156,7 +151,7 @@ inputdf = pd.DataFrame(inputdata, index=[0])
 
 
 #display user input data
-with st.expander('RN Retention Actions'):
+with st.expander('See Your RN Retention Actions Report'):
      st.write(f'{rnname} has a {degree} degree and {rnyears} years experience.')
      st.write(' ')
      st.write(f'Here are some actions you can take to increase retention for {rnname}:')
