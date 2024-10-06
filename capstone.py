@@ -104,53 +104,16 @@ with st.sidebar:
      st.header('RN Retention Actions')
      st.write('Hiring an RN? Select information about them to get suggestions for optimizing retention.')
      rnname = st.text_input ('What is this RNs name? ')
-#     gradrn = st.selectbox ('Attended Grad RN Program?:', ('No', 'Yes'))
      degree = st.selectbox ('Highest RN Degree?:', ('Associates', 'Bachelors', 'Masters'))
-#     volcerts = st.slider ('Number of non-Required Certifications:', 0, 4, 0)
      rnyears = st.slider ('How long has employee had RN license?', 0, 45, 10)
-#     lasthire = st.slider ('What year was employee last hired?', 1980, 2024, 2020)
-#     avghours = st.slider ('What are the employees average weekly hours worked?', 8, 42, 36)
-#     lateorcallin = st.selectbox ('How many attendance points does the employee have?', ('0', '1', '2', '3'))
-#     avgshiftwork = st.slider ('How many average shift hours does the employee work?', 0, 45, 0)
-#     retentionrisk = st.selectbox ('What is the employees current retention risk rating?', ('B', 'A', 'C'))
-#     hiresource = st.selectbox ('What is the employees hire source?', ('Job Board', 'Website', 'Referral', 'Newspaper'))
-#     performance = st.selectbox ('What is the employees latest performance score?', ('Average', 'Below Average', 'Above Average'))
      st.write(f'Expand the RN Retention Actions section in the main window to see suggestions for {rnname}.')
 
 
 # create input feature dataset
 inputdata = {'degree': degree,
              'rnyears': rnyears}
-
-# 10/2 - retain code in case I need to go back to prediction model
-# inputdata = {'gradrn': gradrn,
-#             'degree': degree,
-#             'volcerts': volcerts,
-#             'rnyears': rnyears,
-#             'lasthire': lasthire,
-#             'avghours': avghours,
-#             'avgoncall': 0,
-#             'lateorcallin': lateorcallin,
-#             'avgshiftwork': avgshiftwork,
-#             'retentionrisk': retentionrisk,
-#             'hiresource': hiresource,
-#             'performance': performance}
              
 inputdf = pd.DataFrame(inputdata, index=[0])
-
-#display user input data
-with st.expander('RN Retention Actions'):
-     st.write(f'{rnname} has a {degree} degree and {rnyears} years experience.')
-     st.write(' ')
-     st.write(f'Here are some actions you can take to increase retention for {rnname}:')
-     st.write(' ')
-     if degree == "Associates":
-          st.write(f'Consider offering tuition reimbursement to encourage {rnname} to earn a BSN.')
-     if rnyears < 5:
-          st.write(f'Since {rnname} has less than 5 years experience, attending the Grad RN Orientation Program may be beneficial.')
-     if rnyears > 15:
-          st.write(f'{rnname} has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
-     st.write(f'Work with {rnname} to set short and long term goals. Employees with goals are more engaged.')
 
 
 # build and fit model
@@ -178,5 +141,23 @@ error_rate
 print(confusion_matrix(y_test,pred))
 
 print(classification_report(y_test,pred))
+
+
+
+
+
+#display user input data
+with st.expander('RN Retention Actions'):
+     st.write(f'{rnname} has a {degree} degree and {rnyears} years experience.')
+     st.write(' ')
+     st.write(f'Here are some actions you can take to increase retention for {rnname}:')
+     st.write(' ')
+     if degree == "Associates":
+          st.write(f'Consider offering tuition reimbursement to encourage {rnname} to earn a BSN.')
+     if rnyears < 5:
+          st.write(f'Since {rnname} has less than 5 years experience, attending the Grad RN Orientation Program may be beneficial.')
+     if rnyears > 15:
+          st.write(f'{rnname} has more than 15 years experience and may value the chance to be a preceptor or attend leadership training.')
+     st.write(f'Work with {rnname} to set short and long term goals. Employees with goals are more engaged.')
 
 
