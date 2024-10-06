@@ -26,6 +26,8 @@ data = pd.read_csv(url)
 # streamlit expanders are used to keep the application from being too cluttered
 # each expander will have a descriptive title for ease of selection
 
+st.header('Data Review and Exploration')
+
 # display dataset
 with st.expander('View the Registered Nurse Dataset'):
      st.write('** Registered Nurse Dataset **')
